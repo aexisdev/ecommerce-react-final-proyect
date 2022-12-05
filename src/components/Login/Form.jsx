@@ -10,7 +10,8 @@ const Form = () => {
 
   const navigate = useNavigate()
   const submit = (data) => {
-    const URL = "https://e-commerce-api.academlo.tech/api/v1/users/"
+    const URL = "https://e-commerce-api.academlo.tech/api/v1/users/login"
+    console.log(data);
     axios
       .post(URL, data)
       .then((res) => {
@@ -19,7 +20,7 @@ const Form = () => {
       })
       .catch((err) => {
         localStorage.setItem("token", "");
-        ;
+        console.log(err)
       });
     reset({
       email: "",
