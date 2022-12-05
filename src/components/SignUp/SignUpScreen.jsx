@@ -9,10 +9,9 @@ const SignUpScreen = () => {
   const [isErrorLogin, setIsErrorLogin] = useState(false);
   const navigate = useNavigate();
 
-  const URL = "https://ecommerce-api-react.herokuapp.com/api/v1/users";
+  const URL = "https://e-commerce-api.academlo.tech/api/v1/users";
   const submit = (data) => {
     data.role = "admin";
-    console.log(data);
     if (
       !(
         data.firstName === "" ||
@@ -29,6 +28,7 @@ const SignUpScreen = () => {
           navigate("/login");
         })
         .catch((err) => {
+          console.log(err);
           setIsErrorLogin(true);
           setTimeout(() => {
             setIsErrorLogin(false);
